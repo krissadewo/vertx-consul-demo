@@ -1,0 +1,21 @@
+FROM consul:latest
+
+# COPY --from=0 /bin/consul /bin/consul
+
+# update PATH
+ENV PATH="PATH=$PATH:$PWD/consul"
+
+# add the config file
+COPY consul-config.json /consul/config/config.json
+COPY consul-config.json /etc/consul.d/config.json
+
+# add the config file
+COPY application-config.json .
+
+# expose ports
+EXPOSE 8300 8400 8500 8600
+
+# RUN ${PATH} kv import @kv.json
+
+# run consul
+ENTRYPOINT ["dumb-init", "consul"]

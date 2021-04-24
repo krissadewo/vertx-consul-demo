@@ -1,0 +1,15 @@
+version: "3"
+services:
+  consul-vertx:
+    container_name: consul-vertx
+    image: consul:consul-vertx
+    build:
+      context: .
+      dockerfile: Dockerfile.consul
+    ports:
+      - 8300:8300
+      - 8400:8400
+      - 8500:8500
+      - 8600:8600
+    network_mode: "host"
+    command: [ "agent", "-enable-local-script-checks=true","-server", "-bind=127.0.0.1", "-client=0.0.0.0", "-bootstrap-expect=1", "-config-file=/consul/config/config.json","-config-dir=/etc/consul.d" ]

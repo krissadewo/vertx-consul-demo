@@ -1,0 +1,7 @@
+{
+  "active.profile": "local",
+  "service.name": "http-service",
+  "service.port" : 8888,
+  "consul.host": "localhost",
+  "consul.prefix": "config/local"
+}

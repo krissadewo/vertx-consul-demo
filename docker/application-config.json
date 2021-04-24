@@ -1,0 +1,12 @@
+[
+  {
+    "key": "config/local/service/name",
+    "flags": 0,
+    "value": "dmVydHgtY29uc3Vs"
+  },
+  {
+    "key": "config/local/service/version",
+    "flags": 0,
+    "value": "MS4wLjA="
+  }
+]
